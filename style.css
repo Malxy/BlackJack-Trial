@@ -5,7 +5,7 @@ body{
     text-align:center;
     color:white;
     font-weight:bold;
-    font-size:40px;
+    font-size:35px;
 }
 #title-el{
     color:goldenrod;
@@ -20,9 +20,10 @@ body{
     border-radius:2px;
     font-weight:bold;
     padding:5px 5px;
-    font-size:20px;
-    margin:3px;
-    width:150px;
+    font-size:35px;
+    margin:5px;
+    width:300px;
+    height:100px;
 }
 .button-el:hover{
     border:2px solid black;
