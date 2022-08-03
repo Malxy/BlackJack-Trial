@@ -78,6 +78,7 @@ function render(){
 
     if(isAlive === false)
     {
+        
         if(sum > 21)
         {
             textEl.textContent = "BUST ! You Lost !"
@@ -97,7 +98,16 @@ function render(){
             textEl.textContent = "Dealer Won !"
             lose.play()
         }
-        
+        else if(sum < dealerSum )
+        {
+            textEl.textContent = "Dealer Won !"
+        }
+        else if(sum > dealerSum )
+        {
+            textEl.textContent = "You Won !"
+            win.play();
+        }
+        else textEl.textContent = "DRAW"
     }
     }
 function reset(){
@@ -117,9 +127,27 @@ function addNewCard(){
     if(isAlive === true)
     {
     let newCard = getRandom()
-    let dealerNewCard = getRandom()
     cards.push(newCard)
+    if(dealerSum < 17)
+    {
+    let dealerNewCard = getRandom()
     dealerCards.push(dealerNewCard)
+    }
     render()
+    }
+}
+function pass(){
+    if(isAlive === true)
+    {
+        while(dealerSum < 17)
+        {
+            let dealerNewCard = getRandom()
+            dealerCards.push(dealerNewCard)
+            dealerSum += dealerNewCard
+            render()
+        }
+    isAlive = false
+    render()
+    console.log(isAlive)
     }
 }
