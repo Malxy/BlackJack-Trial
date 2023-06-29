@@ -10,8 +10,6 @@ let dealerCardsEl = document.getElementById("dcards-el")
 let dealerSumEl = document.getElementById("dsum-el")
 let playerEl = document.getElementById("player-el")
 let win = new Audio("win.wav")
-let lose = new Audio("lose2.wav")
-let lose2 = new Audio("off.wav")
 let player = {
     name:"Tudor",
     bet:100
@@ -95,7 +93,7 @@ function render(){
         else if(dealerSum  === 21)
         {
             textEl.textContent = "Dealer Won !"
-            lose.play()
+            
         }
         
     }
